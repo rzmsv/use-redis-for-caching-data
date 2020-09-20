@@ -19,6 +19,7 @@ try {
     const repo =data.public_repos;
     // set data to redis
     client.setex(username,3600,repo)
+    res.send(`<h1>${username} has ${repo} Github repos</h1>`)
 } catch (error) {
     console.log(error)
     res.status(500)
